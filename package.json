@@ -1,0 +1,23 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "A movie application that allows user to search for their favorite movies",
+  "main": "index.js",
+  "dependencies": {
+    "node": "^15.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwabena95/movie-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwabena95/movie-app/issues"
+  },
+  "homepage": "https://github.com/kwabena95/movie-app#readme"
+}

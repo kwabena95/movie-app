@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <title>Movie App</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h3 class="logo-brand">MovieApp</h3>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search" id="serach">
+                <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <section class="main">
+            <div class="menu">
+                <ul class="menu-lists">
+                    <a href="#" class="menu-items current" data-id="discover">Discover</a>
+                    <a href="#" class="menu-items" data-id="top-rated">top rated</a>
+                    <a href="#" class="menu-items" data-id="recommendation">recommendation</a>
+                    <a href="#" class="menu-items" data-id="popular">popular</a>
+
+                    <hr>
+
+                    <a href="#" class="menu-items" data-id="contact">contact</a>
+
+                </ul>
+            </div>
+            <div class="movies">
+                <div class="content current" id="discover">
+
+                </div>
+                <div class="content" id="top-rated"></div>
+                <div class="content" id="recommendation"></div>
+                <div class="content" id="popular"></div>
+                <div class="content" id="contact"></div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- script tags -->
+    <script src="https://kit.fontawesome.com/0cb0e7b636.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
