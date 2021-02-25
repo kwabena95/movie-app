@@ -1,4 +1,5 @@
 
+
 const tabs = document.querySelectorAll('.menu-items')
 const contents = document.querySelectorAll('.content');
 const section = document.querySelector('.main');
@@ -6,6 +7,84 @@ const movieContainer = document.querySelector('.movies');
 
 const API_KEY = '4fb1298fc0a39cf1bc75ce5b8dbaca5d';
 
+const movieGenres = [
+    {
+        "id": 28,
+        "name": "Action"
+    },
+    {
+        "id": 12,
+        "name": "Adventure"
+    },
+    {
+        "id": 16,
+        "name": "Animation"
+    },
+    {
+        "id": 35,
+        "name": "Comedy"
+    },
+    {
+        "id": 80,
+        "name": "Crime"
+    },
+    {
+        "id": 99,
+        "name": "Documentary"
+    },
+    {
+        "id": 18,
+        "name": "Drama"
+    },
+    {
+        "id": 10751,
+        "name": "Family"
+    },
+    {
+        "id": 14,
+        "name": "Fantasy"
+    },
+    {
+        "id": 36,
+        "name": "History"
+    },
+    {
+        "id": 27,
+        "name": "Horror"
+    },
+    {
+        "id": 10402,
+        "name": "Music"
+    },
+    {
+        "id": 9648,
+        "name": "Mystery"
+    },
+    {
+        "id": 10749,
+        "name": "Romance"
+    },
+    {
+        "id": 878,
+        "name": "Science Fiction"
+    },
+    {
+        "id": 10770,
+        "name": "TV Movie"
+    },
+    {
+        "id": 53,
+        "name": "Thriller"
+    },
+    {
+        "id": 10752,
+        "name": "War"
+    },
+    {
+        "id": 37,
+        "name": "Western"
+    }
+];
 // switch between contents
 const switchContent = (e) => {
 
@@ -42,11 +121,13 @@ const getDiscoverMovies = async () => {
     const data = await response.json();
 
     let output = '';
+
     const dicoverContainer = document.querySelector('#discover');
     //loop through data
     data.results.forEach(movie => {
 
         const { backdrop_path, genre_ids, title, vote_average } = movie;
+
 
         output += `
 
@@ -56,9 +137,9 @@ const getDiscoverMovies = async () => {
                 <figcaption class="card-info">
                     <h3 class="card-title">${title}</h3>
                     <div class="genres">
-                        <p class="genre">${genre_ids.forEach(ratings => {
-            console.log('rate:', ratings)
-            getGenres(ratings)
+                        <p class="genre">${genre_ids.forEach(genre => {
+            getGenres(genre);
+            console.log(typeof genre)
         })
             }</p>
                     </div>
@@ -75,21 +156,18 @@ const getDiscoverMovies = async () => {
 };
 
 // genres
-const getGenres = async (genreID) => {
-    const URL = 'https://api.themoviedb.org/3/genre/movie/list?';
-    const response = await fetch(`${URL}api_key=${API_KEY}`);
-    const data = await response.json();
+const getGenres = (genreID) => {
 
-    data.genres.forEach(genre => {
+    movieGenres.forEach(genre => {
         const { id, name } = genre;
-        if (genreID === id) {
-            return genreID = name
+        if (id === genreID) {
+            return name
         }
-
     })
 };
 
 
+getGenres()
 
 
 
